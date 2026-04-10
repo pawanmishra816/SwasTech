@@ -1,0 +1,1752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwasTech - Patient Information System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .medical-gradient {
+            background: linear-gradient(135deg, #000000 0%, #333333 100%);
+        }
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        .medical-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M30 30c0-11.046-8.954-20-20-20s-20 8.954-20 20 8.954 20 20 20 20-8.954 20-20zm0 0c0 11.046 8.954 20 20 20s20-8.954 20-20-8.954-20-20-20-20 8.954-20 20z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-800 medical-pattern">
+    <!-- Header -->
+    <header class="bg-black shadow-lg border-b-4 border-white">
+        <div class="max-w-7xl mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center">
+                        <svg class="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h1 class="text-2xl font-bold text-white">SwasTech</h1>
+                        <p class="text-sm text-gray-300">Advanced Patient Care System</p>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-6">
+                    <div class="flex items-center text-white">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        <span class="text-sm font-medium">HIPAA Compliant</span>
+                    </div>
+                    <div class="flex items-center text-gray-300">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                        </svg>
+                        <span class="text-sm font-medium">Secure Access</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page 1: ID Entry -->
+    <div id="idPage" class="min-h-screen flex items-center justify-center p-4 pt-8">
+        <div class="bg-white rounded-3xl shadow-2xl p-8 w-full max-w-lg border border-gray-100">
+            <div class="text-center mb-8">
+                <div class="w-20 h-20 bg-gradient-to-r from-black to-gray-800 rounded-full flex items-center justify-center mx-auto mb-6 pulse-animation border-2 border-white">
+                    <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                    </svg>
+                </div>
+                <h2 class="text-3xl font-bold text-gray-800 mb-3">Patient Portal Access</h2>
+                <p class="text-gray-600 mb-6">Secure access to your medical information</p>
+                
+                <div class="bg-gradient-to-r from-gray-100 to-gray-200 border-l-4 border-black rounded-lg p-4 mb-6">
+                    <div class="flex items-start">
+                        <svg class="w-6 h-6 text-black mr-3 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        <div class="text-left">
+                            <h4 class="font-semibold text-gray-800 mb-2">🏥 Healthcare Features</h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Electronic Health Records (EHR)</li>
+                                <li>• Secure Medical Document Storage</li>
+                                <li>• Treatment History Tracking</li>
+                                <li>• Multi-Device Accessibility</li>
+                            </ul>
+                            <details class="mt-3">
+                                <summary class="text-sm text-black cursor-pointer hover:text-gray-800 font-medium">Demo Patient IDs</summary>
+                                <div class="mt-2 text-xs text-gray-500 space-y-1 bg-white rounded p-2">
+                                    <p>• 123456789012 (Vivek - Active Patient)</p>
+                                    <p>• 234567890123 (Pratham - Active Patient)</p>
+                                    <p>• 345678901234 (Inactive Account)</p>
+                                    <p>• 678901234567 (Inactive Account)</p>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <form id="idForm" class="space-y-6">
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-4">Patient Access Type</label>
+                    <div class="grid md:grid-cols-3 gap-4 mb-6">
+                        <label class="flex items-center justify-center p-5 border-2 border-black bg-gray-100 rounded-xl cursor-pointer hover:border-gray-800 hover:bg-gray-200 transition-all duration-200 user-type-option">
+                            <input type="radio" name="userType" value="existing" class="sr-only" checked onchange="toggleUserType()">
+                            <div class="text-center">
+                                <div class="w-14 h-14 bg-black rounded-full flex items-center justify-center mx-auto mb-3">
+                                    <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                                    </svg>
+                                </div>
+                                <span class="text-sm font-semibold text-gray-800">Existing Patient</span>
+                                <p class="text-xs text-gray-600 mt-1">I have a Patient ID</p>
+                            </div>
+                        </label>
+                        
+                        <label class="flex items-center justify-center p-5 border-2 border-gray-400 rounded-xl cursor-pointer hover:border-black hover:bg-gray-100 transition-all duration-200 user-type-option">
+                            <input type="radio" name="userType" value="new" class="sr-only" onchange="toggleUserType()">
+                            <div class="text-center">
+                                <div class="w-14 h-14 bg-gray-600 rounded-full flex items-center justify-center mx-auto mb-3">
+                                    <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"></path>
+                                    </svg>
+                                </div>
+                                <span class="text-sm font-semibold text-gray-800">New Patient</span>
+                                <p class="text-xs text-gray-600 mt-1">Register new account</p>
+                            </div>
+                        </label>
+                        
+                        <label class="flex items-center justify-center p-5 border-2 border-gray-400 rounded-xl cursor-pointer hover:border-purple-500 hover:bg-purple-50 transition-all duration-200 user-type-option">
+                            <input type="radio" name="userType" value="minor" class="sr-only" onchange="toggleUserType()">
+                            <div class="text-center">
+                                <div class="w-14 h-14 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-3">
+                                    <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                    </svg>
+                                </div>
+                                <span class="text-sm font-semibold text-gray-800">Minor Access</span>
+                                <p class="text-xs text-gray-600 mt-1">Under 18 years</p>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+                
+                <div id="existingUserSection">
+                    <label for="uniqueId" class="block text-sm font-semibold text-gray-700 mb-3">
+                        12-Digit Patient ID
+                    </label>
+                    <div class="relative">
+                        <input 
+                            type="text" 
+                            id="uniqueId" 
+                            name="uniqueId"
+                            maxlength="12"
+                            placeholder="Enter your Patient ID"
+                            class="w-full px-5 py-4 border-2 border-gray-400 rounded-xl focus:ring-2 focus:ring-black focus:border-black text-center text-lg tracking-widest font-mono bg-white placeholder-gray-400 transition-all duration-200"
+                            required
+                        >
+                        <div class="absolute right-4 top-1/2 transform -translate-y-1/2">
+                            <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m0 0a2 2 0 012 2v6a2 2 0 01-2 2H9a2 2 0 01-2-2V9a2 2 0 012-2m0 0V7a2 2 0 012-2m3 0a2 2 0 00-2-2M9 7h6"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div id="idError" class="text-red-500 text-sm mt-2 hidden flex items-center">
+                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        Please enter exactly 12 digits
+                    </div>
+                </div>
+                
+                <div id="newUserSection" class="hidden">
+                    <div class="bg-gradient-to-r from-gray-100 to-gray-200 border border-black rounded-xl p-5 mb-6">
+                        <div class="flex items-center mb-3">
+                            <svg class="w-6 h-6 text-black mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            <h4 class="text-sm font-semibold text-gray-800">New Patient Registration</h4>
+                        </div>
+                        <p class="text-sm text-gray-600 mb-3">Your unique 12-digit Patient ID will be generated automatically upon successful registration.</p>
+                        <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-3">
+                            <p class="text-xs text-yellow-800 font-medium">⚠️ Account Restriction Policy</p>
+                            <p class="text-xs text-yellow-700">Each person can only create ONE account per name and phone number combination. Duplicate registrations are not allowed.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <label for="newUserName" class="block text-sm font-semibold text-gray-700 mb-2">
+                                Full Name *
+                            </label>
+                            <input 
+                                type="text" 
+                                id="newUserName" 
+                                name="newUserName"
+                                placeholder="Enter your full name"
+                                class="w-full px-4 py-3 border-2 border-gray-400 rounded-xl focus:ring-2 focus:ring-black focus:border-black bg-white placeholder-gray-400 transition-all duration-200"
+                            >
+                        </div>
+                        
+                        <div>
+                            <label for="newUserPhone" class="block text-sm font-semibold text-gray-700 mb-2">
+                                Phone Number *
+                            </label>
+                            <input 
+                                type="tel" 
+                                id="newUserPhone" 
+                                name="newUserPhone"
+                                placeholder="10-digit phone number"
+                                maxlength="10"
+                                class="w-full px-4 py-3 border-2 border-gray-400 rounded-xl focus:ring-2 focus:ring-black focus:border-black bg-white placeholder-gray-400 transition-all duration-200"
+                            >
+                            <div id="newUserPhoneError" class="text-red-500 text-sm mt-1 hidden flex items-start">
+                                <svg class="w-4 h-4 mr-1 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                <span>Please enter exactly 10 digits</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="minorSection" class="hidden">
+                    <div class="bg-gradient-to-r from-purple-100 to-pink-100 border border-purple-300 rounded-xl p-5 mb-6">
+                        <div class="flex items-center mb-3">
+                            <svg class="w-6 h-6 text-purple-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                            </svg>
+                            <h4 class="text-sm font-semibold text-purple-800">Minor Patient Access (Under 18)</h4>
+                        </div>
+                        <p class="text-sm text-purple-700 mb-3">For patients under 18 years, access must be through a parent/guardian account.</p>
+                        <p class="text-xs text-purple-600">⚠️ Please enter the parent/guardian's Patient ID to manage minor's medical records.</p>
+                    </div>
+                    
+                    <div>
+                        <label for="parentId" class="block text-sm font-semibold text-gray-700 mb-3">
+                            Parent/Guardian Patient ID *
+                        </label>
+                        <div class="relative">
+                            <input 
+                                type="text" 
+                                id="parentId" 
+                                name="parentId"
+                                maxlength="12"
+                                placeholder="Enter parent/guardian's 12-digit Patient ID"
+                                class="w-full px-5 py-4 border-2 border-gray-400 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-purple-500 text-center text-lg tracking-widest font-mono bg-white placeholder-gray-400 transition-all duration-200"
+                            >
+                            <div class="absolute right-4 top-1/2 transform -translate-y-1/2">
+                                <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div id="parentIdError" class="text-red-500 text-sm mt-2 hidden flex items-center">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            Please enter exactly 12 digits
+                        </div>
+                    </div>
+                </div>
+                
+                <button 
+                    type="submit"
+                    id="submitBtn"
+                    class="w-full bg-gradient-to-r from-black to-gray-800 hover:from-gray-800 hover:to-black text-white font-semibold py-4 px-6 rounded-xl transition-all duration-200 transform hover:scale-105 shadow-lg"
+                >
+                    <span class="flex items-center justify-center">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                        </svg>
+                        Access Patient Portal
+                    </span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+
+
+    <!-- Page 2: Children Management -->
+    <div id="childrenPage" class="min-h-screen flex items-center justify-center p-4 pt-8 hidden">
+        <div class="bg-white rounded-3xl shadow-2xl p-8 w-full max-w-6xl border border-gray-100">
+            <div class="text-center mb-8">
+                <div class="w-20 h-20 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-6 border-2 border-white">
+                    <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                    </svg>
+                </div>
+                <h2 class="text-3xl font-bold text-gray-800 mb-3">Children Management</h2>
+                <div class="bg-gradient-to-r from-purple-100 to-pink-100 rounded-xl p-4 inline-block border-2 border-purple-300">
+                    <p class="text-gray-600">Parent/Guardian: <span id="parentPatientName" class="font-bold text-gray-800"></span></p>
+                    <p class="text-gray-600">Parent ID: <span id="displayParentId" class="font-mono font-bold text-purple-600"></span></p>
+                </div>
+            </div>
+            
+            <div id="childrenContainer" class="space-y-6 mb-8">
+                <!-- Children will be populated here -->
+            </div>
+            
+            <div class="flex flex-wrap gap-4 justify-center">
+                <button 
+                    type="button"
+                    onclick="goBackToId()"
+                    class="bg-white hover:bg-gray-100 text-black border-2 border-black font-semibold py-3 px-6 rounded-xl transition-all duration-200 flex items-center"
+                >
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                    </svg>
+                    Back to Portal
+                </button>
+                <button 
+                    type="button"
+                    onclick="addNewChild()"
+                    class="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-200 flex items-center"
+                >
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                    </svg>
+                    Add New Child
+                </button>
+                <button 
+                    type="button"
+                    onclick="viewParentRecords()"
+                    class="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-200 flex items-center"
+                >
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                    </svg>
+                    View Parent Records
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 3: Previous Data Display -->
+    <div id="previousDataPage" class="min-h-screen flex items-center justify-center p-4 pt-8 hidden">
+        <div class="bg-white rounded-3xl shadow-2xl p-8 w-full max-w-6xl border border-gray-100">
+            <div class="text-center mb-8">
+                <div class="w-20 h-20 bg-gradient-to-r from-black to-gray-800 rounded-full flex items-center justify-center mx-auto mb-6 border-2 border-white">
+                    <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                    </svg>
+                </div>
+                <h2 class="text-3xl font-bold text-gray-800 mb-3">Medical History</h2>
+                <div class="bg-gradient-to-r from-gray-100 to-gray-200 rounded-xl p-4 inline-block border-2 border-black">
+                    <p class="text-gray-600">Patient ID: <span id="displayPrevId" class="font-mono font-bold text-black"></span></p>
+                    <p class="text-gray-600">Patient: <span id="prevPatientName" class="font-bold text-gray-800"></span></p>
+                </div>
+            </div>
+            
+            <div id="previousDataContainer" class="space-y-6 mb-8">
+                <!-- Previous data will be populated here -->
+            </div>
+            
+            <div class="flex flex-wrap gap-4 justify-center">
+                <button 
+                    type="button"
+                    onclick="goBackToId()"
+                    class="bg-white hover:bg-gray-100 text-black border-2 border-black font-semibold py-3 px-6 rounded-xl transition-all duration-200 flex items-center"
+                >
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                    </svg>
+                    Back to Portal
+                </button>
+                <button 
+                    type="button"
+                    onclick="addNewEntry()"
+                    class="bg-gradient-to-r from-gray-700 to-gray-800 hover:from-gray-800 hover:to-black text-white font-semibold py-3 px-6 rounded-xl transition-all duration-200 flex items-center"
+                >
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                    </svg>
+                    New Medical Entry
+                </button>
+                <button 
+                    type="button"
+                    onclick="editLatestEntry()"
+                    class="bg-gradient-to-r from-black to-gray-800 hover:from-gray-800 hover:to-black text-white font-semibold py-3 px-6 rounded-xl transition-all duration-200 flex items-center"
+                >
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+                    </svg>
+                    Edit Latest Record
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 3: Information Form -->
+    <div id="infoPage" class="min-h-screen flex items-center justify-center p-4 pt-8 hidden">
+        <div class="bg-white rounded-3xl shadow-2xl p-8 w-full max-w-4xl border border-gray-100">
+            <div class="text-center mb-8">
+                <div class="w-20 h-20 bg-gradient-to-r from-black to-gray-800 rounded-full flex items-center justify-center mx-auto mb-6 border-2 border-white">
+                    <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
+                    </svg>
+                </div>
+                <h2 class="text-3xl font-bold text-gray-800 mb-3" id="formTitle">Medical Information Form</h2>
+                <div class="bg-gradient-to-r from-gray-100 to-gray-200 rounded-xl p-4 inline-block border-2 border-black">
+                    <p class="text-gray-600">Patient ID: <span id="displayId" class="font-mono font-bold text-black"></span></p>
+                    <p class="text-gray-600">Patient: <span id="patientName" class="font-bold text-gray-800"></span></p>
+                </div>
+            </div>
+            
+            <form id="infoForm" class="space-y-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label for="fullName" class="block text-sm font-semibold text-gray-700 mb-2">
+                            Full Name *
+                        </label>
+                        <input 
+                            type="text" 
+                            id="fullName" 
+                            name="fullName"
+                            placeholder="Enter patient's full name"
+                            class="w-full px-4 py-3 border-2 border-gray-400 rounded-xl focus:ring-2 focus:ring-black focus:border-black bg-white placeholder-gray-400 transition-all duration-200"
+                            required
+                        >
+                    </div>
+                    
+                    <div>
+                        <label for="age" class="block text-sm font-semibold text-gray-700 mb-2">
+                            Age *
+                        </label>
+                        <input 
+                            type="number" 
+                            id="age" 
+                            name="age"
+                            min="1" 
+                            max="120"
+                            placeholder="Patient's age"
+                            class="w-full px-4 py-3 border-2 border-gray-400 rounded-xl focus:ring-2 focus:ring-black focus:border-black bg-white placeholder-gray-400 transition-all duration-200"
+                            required
+                        >
+                    </div>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label for="phoneNumber" class="block text-sm font-semibold text-gray-700 mb-2">
+                            Phone Number *
+                        </label>
+                        <input 
+                            type="tel" 
+                            id="phoneNumber" 
+                            name="phoneNumber"
+                            placeholder="10-digit phone number"
+                            maxlength="10"
+                            pattern="[0-9]{10}"
+                            class="w-full px-4 py-3 border-2 border-gray-400 rounded-xl focus:ring-2 focus:ring-black focus:border-black bg-white placeholder-gray-400 transition-all duration-200"
+                            required
+                        >
+                        <div id="phoneError" class="text-red-500 text-sm mt-1 hidden flex items-center">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            Please enter exactly 10 digits
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label for="emergencyContact" class="block text-sm font-semibold text-gray-700 mb-2">
+                            Emergency Contact *
+                        </label>
+                        <input 
+                            type="tel" 
+                            id="emergencyContact" 
+                            name="emergencyContact"
+                            placeholder="Emergency contact (10 digits)"
+                            maxlength="10"
+                            pattern="[0-9]{10}"
+                            class="w-full px-4 py-3 border-2 border-gray-400 rounded-xl focus:ring-2 focus:ring-black focus:border-black bg-white placeholder-gray-400 transition-all duration-200"
+                            required
+                        >
+                        <div id="emergencyError" class="text-red-500 text-sm mt-1 hidden flex items-center">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            Please enter exactly 10 digits
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <label for="address" class="block text-sm font-semibold text-gray-700 mb-2">
+                        Address *
+                    </label>
+                    <textarea 
+                        id="address" 
+                        name="address"
+                        rows="3"
+                        placeholder="Enter complete address"
+                        class="w-full px-4 py-3 border-2 border-gray-400 rounded-xl focus:ring-2 focus:ring-black focus:border-black bg-white placeholder-gray-400 resize-none transition-all duration-200"
+                        required
+                    ></textarea>
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-3">Gender *</label>
+                    <div class="flex flex-wrap gap-4">
+                        <label class="flex items-center bg-white px-4 py-3 rounded-xl border-2 border-gray-400 hover:border-black cursor-pointer transition-all duration-200">
+                            <input type="radio" name="gender" value="male" class="w-4 h-4 text-black focus:ring-black mr-3" required>
+                            <span class="text-gray-700 font-medium">Male</span>
+                        </label>
+                        <label class="flex items-center bg-white px-4 py-3 rounded-xl border-2 border-gray-400 hover:border-black cursor-pointer transition-all duration-200">
+                            <input type="radio" name="gender" value="female" class="w-4 h-4 text-black focus:ring-black mr-3" required>
+                            <span class="text-gray-700 font-medium">Female</span>
+                        </label>
+                        <label class="flex items-center bg-white px-4 py-3 rounded-xl border-2 border-gray-400 hover:border-black cursor-pointer transition-all duration-200">
+                            <input type="radio" name="gender" value="other" class="w-4 h-4 text-black focus:ring-black mr-3" required>
+                            <span class="text-gray-700 font-medium">Other</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div>
+                    <label for="disease" class="block text-sm font-semibold text-gray-700 mb-2">
+                        Medical Condition / Diagnosis *
+                    </label>
+                    <textarea 
+                        id="disease" 
+                        name="disease"
+                        rows="3"
+                        placeholder="Please describe the medical condition, symptoms, or diagnosis"
+                        class="w-full px-4 py-3 border-2 border-gray-400 rounded-xl focus:ring-2 focus:ring-black focus:border-black bg-white placeholder-gray-400 resize-none transition-all duration-200"
+                        required
+                    ></textarea>
+                </div>
+                
+                <div>
+                    <label for="treatment" class="block text-sm font-semibold text-gray-700 mb-2">
+                        Treatment Plan / Medication *
+                    </label>
+                    <textarea 
+                        id="treatment" 
+                        name="treatment"
+                        rows="3"
+                        placeholder="Describe the treatment provided, medications prescribed, or care plan"
+                        class="w-full px-4 py-3 border-2 border-gray-400 rounded-xl focus:ring-2 focus:ring-black focus:border-black bg-white placeholder-gray-400 resize-none transition-all duration-200"
+                        required
+                    ></textarea>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label for="visitDate" class="block text-sm font-semibold text-gray-700 mb-2">
+                            Visit Date *
+                        </label>
+                        <input 
+                            type="date" 
+                            id="visitDate" 
+                            name="visitDate"
+                            class="w-full px-4 py-3 border-2 border-gray-400 rounded-xl focus:ring-2 focus:ring-black focus:border-black bg-white transition-all duration-200"
+                            required
+                        >
+                    </div>
+                    
+                    <div>
+                        <label for="visitTime" class="block text-sm font-semibold text-gray-700 mb-2">
+                            Visit Time *
+                        </label>
+                        <input 
+                            type="time" 
+                            id="visitTime" 
+                            name="visitTime"
+                            class="w-full px-4 py-3 border-2 border-gray-400 rounded-xl focus:ring-2 focus:ring-black focus:border-black bg-white transition-all duration-200"
+                            required
+                        >
+                    </div>
+                </div>
+                
+                <div>
+                    <label for="reports" class="block text-sm font-semibold text-gray-700 mb-3">
+                        Medical Reports & Documents
+                    </label>
+                    <div class="border-2 border-dashed border-gray-300 rounded-xl p-8 text-center hover:border-purple-400 hover:bg-purple-50 transition-all duration-200">
+                        <input 
+                            type="file" 
+                            id="reports" 
+                            name="reports"
+                            accept=".pdf"
+                            multiple
+                            class="hidden"
+                            onchange="handleFileUpload(this)"
+                        >
+                        <label for="reports" class="cursor-pointer">
+                            <div class="w-16 h-16 bg-gradient-to-r from-purple-100 to-pink-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
+                                </svg>
+                            </div>
+                            <p class="text-gray-700 font-medium mb-2">Upload Medical Reports</p>
+                            <p class="text-sm text-gray-500">Click to select PDF files (Lab reports, X-rays, Prescriptions, etc.)</p>
+                        </label>
+                    </div>
+                    <div id="fileList" class="mt-4 space-y-2"></div>
+                </div>
+                
+                <div class="flex gap-4 pt-6">
+                    <button 
+                        type="button"
+                        onclick="goBackFromForm()"
+                        class="flex-1 bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold py-4 px-6 rounded-xl transition-all duration-200 flex items-center justify-center"
+                    >
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                        </svg>
+                        Back
+                    </button>
+                    <button 
+                        type="submit"
+                        class="flex-1 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-200 transform hover:scale-105 shadow-lg flex items-center justify-center"
+                    >
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        Save Medical Record
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- New User Registration Success -->
+    <div id="newUserSuccessPage" class="min-h-screen flex items-center justify-center p-4 pt-8 hidden">
+        <div class="bg-white rounded-3xl shadow-2xl p-8 w-full max-w-lg text-center border border-gray-100">
+            <div class="w-20 h-20 bg-gradient-to-r from-green-400 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-6 pulse-animation">
+                <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+            </div>
+            <h2 class="text-3xl font-bold text-gray-800 mb-3">Registration Successful!</h2>
+            <p class="text-gray-600 mb-6">Welcome to SwasTech! Your patient account has been created.</p>
+            
+            <div class="bg-gradient-to-r from-blue-50 to-green-50 border-2 border-blue-200 rounded-xl p-6 mb-8">
+                <div class="flex items-center justify-center mb-3">
+                    <svg class="w-6 h-6 text-blue-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m0 0a2 2 0 012 2v6a2 2 0 01-2 2H9a2 2 0 01-2-2V9a2 2 0 012-2m0 0V7a2 2 0 012-2m3 0a2 2 0 00-2-2M9 7h6"></path>
+                    </svg>
+                    <p class="text-sm font-semibold text-blue-800">Your Patient ID:</p>
+                </div>
+                <p id="generatedId" class="text-3xl font-mono font-bold text-blue-600 tracking-wider mb-3"></p>
+                <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-3">
+                    <p class="text-xs text-yellow-800 font-medium">⚠️ Important: Please save this Patient ID securely</p>
+                    <p class="text-xs text-yellow-700">You'll need it for all future medical appointments and portal access</p>
+                </div>
+            </div>
+            
+            <div class="flex gap-4">
+                <button 
+                    onclick="proceedToForm()"
+                    class="flex-1 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-200 flex items-center justify-center"
+                >
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                    </svg>
+                    Continue to Medical Form
+                </button>
+                <button 
+                    onclick="startOver()"
+                    class="flex-1 bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold py-4 px-6 rounded-xl transition-all duration-200 flex items-center justify-center"
+                >
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+                    </svg>
+                    Start Over
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Message -->
+    <div id="successPage" class="min-h-screen flex items-center justify-center p-4 pt-8 hidden">
+        <div class="bg-white rounded-3xl shadow-2xl p-8 w-full max-w-lg text-center border border-gray-100">
+            <div class="w-20 h-20 bg-gradient-to-r from-green-400 to-green-600 rounded-full flex items-center justify-center mx-auto mb-6 pulse-animation">
+                <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+            </div>
+            <h2 class="text-3xl font-bold text-gray-800 mb-3">Record Saved Successfully!</h2>
+            <p class="text-gray-600 mb-8">Your medical information has been securely recorded in our system.</p>
+            
+            <div class="flex gap-4">
+                <button 
+                    onclick="viewPreviousData()"
+                    class="flex-1 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-200 flex items-center justify-center"
+                >
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                    </svg>
+                    View Medical History
+                </button>
+                <button 
+                    onclick="startOver()"
+                    class="flex-1 bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold py-4 px-6 rounded-xl transition-all duration-200 flex items-center justify-center"
+                >
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                    </svg>
+                    Return to Portal
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center">
+                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold">SwasTech</h3>
+                    </div>
+                    <p class="text-gray-300 text-sm">Advanced healthcare management system providing secure, efficient, and comprehensive patient care solutions.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li>• Patient Portal</li>
+                        <li>• Medical Records</li>
+                        <li>• Appointment Booking</li>
+                        <li>• Emergency Services</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Security & Compliance</h4>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li>• HIPAA Compliant</li>
+                        <li>• SSL Encrypted</li>
+                        <li>• 24/7 Monitoring</li>
+                        <li>• Data Privacy Protected</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-400 text-sm">© 2025 SwasTech. All rights reserved. | Privacy Policy | Terms of Service</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Authorized patient IDs database
+        const authorizedPatients = {
+            '123456789012': { name: 'Vivek', status: 'active' },
+            '234567890123': { name: 'Pratham', status: 'active' },
+            '345678901234': { name: 'Test Patient', status: 'active' },
+            '678901234567': { name: 'Demo Account', status: 'active' }
+        };
+
+        // Sample previous data for demonstration
+        const patientData = {
+            '123456789012': [
+                {
+                    timestamp: '2025-07-25 10:30:00',
+                    name: 'Vivek',
+                    age: 18,
+                    gender: 'male',
+                    phoneNumber: '9876543210',
+                    emergencyContact: '9876543211',
+                    address: 'Sitapur, Uttar Pradesh',
+                    disease: 'Routine health checkup',
+                    treatment: 'General health assessment, vitamin supplements recommended',
+                    visitDate: '2025-07-25',
+                    visitTime: '10:30',
+                    reports: ['health_checkup_jul2025.pdf', 'blood_test_jul2025.pdf']
+                }
+            ],
+            '234567890123': [
+                {
+                    timestamp: '2025-08-25 09:45:00',
+                    name: 'Pratham',
+                    age: 20,
+                    gender: 'male',
+                    phoneNumber: '8765432109',
+                    emergencyContact: '8765432108',
+                    address: 'Mathura, Uttar Pradesh',
+                    disease: 'Sports injury - knee strain',
+                    treatment: 'Rest, physiotherapy, anti-inflammatory medication',
+                    visitDate: '2025-08-25',
+                    visitTime: '09:45',
+                    reports: ['xray_knee_aug2025.pdf']
+                }
+            ]
+        };
+
+        // Children data structure - stores children under parent IDs
+        const childrenData = {
+            '123456789012': [
+                {
+                    childId: 'C001',
+                    name: 'Arjun Kumar',
+                    age: 12,
+                    gender: 'male',
+                    dateOfBirth: '2012-03-15',
+                    relationship: 'Son',
+                    medicalRecords: [
+                        {
+                            timestamp: '2025-06-15 14:30:00',
+                            disease: 'Common cold and fever',
+                            treatment: 'Rest, fluids, paracetamol as needed',
+                            visitDate: '2025-06-15',
+                            visitTime: '14:30',
+                            reports: ['child_checkup_jun2025.pdf']
+                        }
+                    ]
+                },
+                {
+                    childId: 'C002',
+                    name: 'Priya Kumar',
+                    age: 8,
+                    gender: 'female',
+                    dateOfBirth: '2016-09-22',
+                    relationship: 'Daughter',
+                    medicalRecords: [
+                        {
+                            timestamp: '2025-05-20 11:00:00',
+                            disease: 'Vaccination - MMR booster',
+                            treatment: 'Routine vaccination completed',
+                            visitDate: '2025-05-20',
+                            visitTime: '11:00',
+                            reports: ['vaccination_record_may2025.pdf']
+                        }
+                    ]
+                }
+            ],
+            '234567890123': [
+                {
+                    childId: 'C003',
+                    name: 'Ananya Sharma',
+                    age: 15,
+                    gender: 'female',
+                    dateOfBirth: '2009-11-08',
+                    relationship: 'Daughter',
+                    medicalRecords: [
+                        {
+                            timestamp: '2025-07-10 16:15:00',
+                            disease: 'Annual health checkup',
+                            treatment: 'All vitals normal, growth tracking on schedule',
+                            visitDate: '2025-07-10',
+                            visitTime: '16:15',
+                            reports: ['annual_checkup_jul2025.pdf']
+                        }
+                    ]
+                }
+            ]
+        };
+
+        let currentPatientId = '';
+        let isEditMode = false;
+        let editingIndex = -1;
+        let uploadedFiles = [];
+        let newUserData = null;
+        let isMinorAccess = false;
+        let currentChildId = null;
+        
+        // Track all generated IDs to prevent duplicates (stored in localStorage for persistence)
+        let generatedIds = JSON.parse(localStorage.getItem('generatedPatientIds') || '[]');
+        
+        // Track registered phone numbers to prevent multiple accounts per person
+        let registeredPhones = JSON.parse(localStorage.getItem('registeredPhoneNumbers') || '{}');
+        
+        // Track registered names to prevent multiple accounts per person
+        let registeredNames = JSON.parse(localStorage.getItem('registeredNames') || '{}');
+        
+        // Track name-phone combinations to prevent duplicate accounts
+        let registeredCombinations = JSON.parse(localStorage.getItem('registeredCombinations') || '{}');
+        
+        // Initialize existing demo accounts in all registries
+        if (!localStorage.getItem('registeredPhoneNumbers')) {
+            registeredPhones['9876543210'] = '123456789012'; // Vivek's phone
+            registeredPhones['8765432109'] = '234567890123'; // Pratham's phone
+            registeredPhones['7654321098'] = '345678901234'; // Test Patient's phone
+            registeredPhones['6543210987'] = '678901234567'; // Demo Account's phone
+            localStorage.setItem('registeredPhoneNumbers', JSON.stringify(registeredPhones));
+            
+            registeredNames['vivek'] = '123456789012'; // Vivek's name (normalized)
+            registeredNames['pratham'] = '234567890123'; // Pratham's name (normalized)
+            registeredNames['testpatient'] = '345678901234'; // Test Patient's name (normalized)
+            registeredNames['demoaccount'] = '678901234567'; // Demo Account's name (normalized)
+            localStorage.setItem('registeredNames', JSON.stringify(registeredNames));
+            
+            registeredCombinations['vivek_9876543210'] = '123456789012';
+            registeredCombinations['pratham_8765432109'] = '234567890123';
+            registeredCombinations['testpatient_7654321098'] = '345678901234';
+            registeredCombinations['demoaccount_6543210987'] = '678901234567';
+            localStorage.setItem('registeredCombinations', JSON.stringify(registeredCombinations));
+        }
+        
+        // Function to check if ID was previously generated
+        function isIdInGeneratedHistory(id) {
+            return generatedIds.includes(id);
+        }
+        
+        // Function to add new ID to generated history
+        function addToGeneratedHistory(id) {
+            if (!generatedIds.includes(id)) {
+                generatedIds.push(id);
+                localStorage.setItem('generatedPatientIds', JSON.stringify(generatedIds));
+            }
+        }
+        
+        // Function to normalize names for comparison (lowercase, remove extra spaces)
+        function normalizeName(name) {
+            return name.toLowerCase().trim().replace(/\s+/g, ' ');
+        }
+        
+        // Function to check if phone number is already registered
+        function isPhoneRegistered(phone) {
+            return registeredPhones.hasOwnProperty(phone);
+        }
+        
+        // Function to check if name is already registered
+        function isNameRegistered(name) {
+            const normalizedName = normalizeName(name).replace(/\s/g, '');
+            return registeredNames.hasOwnProperty(normalizedName);
+        }
+        
+        // Function to check if name-phone combination already exists
+        function isCombinationRegistered(name, phone) {
+            const normalizedName = normalizeName(name).replace(/\s/g, '');
+            const combinationKey = `${normalizedName}_${phone}`;
+            return registeredCombinations.hasOwnProperty(combinationKey);
+        }
+        
+        // Function to register a complete account (name, phone, and combination)
+        function registerAccount(name, phone, patientId) {
+            const normalizedName = normalizeName(name).replace(/\s/g, '');
+            const combinationKey = `${normalizedName}_${phone}`;
+            
+            registeredPhones[phone] = patientId;
+            registeredNames[normalizedName] = patientId;
+            registeredCombinations[combinationKey] = patientId;
+            
+            localStorage.setItem('registeredPhoneNumbers', JSON.stringify(registeredPhones));
+            localStorage.setItem('registeredNames', JSON.stringify(registeredNames));
+            localStorage.setItem('registeredCombinations', JSON.stringify(registeredCombinations));
+        }
+
+        // Handle ID form submission
+        document.getElementById('idForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const userType = document.querySelector('input[name="userType"]:checked').value;
+            
+            if (userType === 'new') {
+                handleNewUserRegistration();
+            } else if (userType === 'minor') {
+                handleMinorAccess();
+            } else {
+                handleExistingUserLogin();
+            }
+        });
+
+
+
+        function handleNewUserRegistration() {
+            const name = document.getElementById('newUserName').value.trim();
+            const phone = document.getElementById('newUserPhone').value.trim();
+            const phoneError = document.getElementById('newUserPhoneError');
+            
+            // Validate required fields
+            if (!name) {
+                document.getElementById('newUserName').focus();
+                return;
+            }
+            
+            if (!phone || phone.length !== 10) {
+                phoneError.textContent = 'Please enter exactly 10 digits';
+                phoneError.classList.remove('hidden');
+                document.getElementById('newUserPhone').focus();
+                return;
+            }
+            
+            // Check if phone number is already registered
+            if (isPhoneRegistered(phone)) {
+                phoneError.textContent = 'This phone number is already registered. Each person can only have one account.';
+                phoneError.classList.remove('hidden');
+                document.getElementById('newUserPhone').focus();
+                return;
+            }
+            
+            // Check if name is already registered
+            if (isNameRegistered(name)) {
+                phoneError.textContent = 'This name is already registered. Each person can only have one account.';
+                phoneError.classList.remove('hidden');
+                document.getElementById('newUserName').focus();
+                return;
+            }
+            
+            // Check if this exact name-phone combination already exists
+            if (isCombinationRegistered(name, phone)) {
+                phoneError.textContent = 'An account with this name and phone number already exists.';
+                phoneError.classList.remove('hidden');
+                return;
+            }
+            
+            phoneError.classList.add('hidden');
+            
+            // Generate unique 12-digit ID that will never be repeated
+            let newId;
+            do {
+                newId = Math.floor(100000000000 + Math.random() * 900000000000).toString();
+            } while (authorizedPatients[newId] || isIdInGeneratedHistory(newId));
+            
+            // Add to authorized patients database permanently
+            authorizedPatients[newId] = {
+                name: name,
+                status: 'active'
+            };
+            
+            // Store this ID in generated history to prevent future duplicates
+            addToGeneratedHistory(newId);
+            
+            // Register the complete account (name, phone, and combination)
+            registerAccount(name, phone, newId);
+            
+            // Store new user data temporarily
+            newUserData = {
+                id: newId,
+                name: name,
+                phone: phone
+            };
+            
+            currentPatientId = newId;
+            
+            // Show success page with generated ID
+            document.getElementById('generatedId').textContent = newId;
+            document.getElementById('idPage').classList.add('hidden');
+            document.getElementById('newUserSuccessPage').classList.remove('hidden');
+        }
+
+        function handleMinorAccess() {
+            const parentIdInput = document.getElementById('parentId');
+            const parentIdValue = parentIdInput.value.trim();
+            const errorDiv = document.getElementById('parentIdError');
+            
+            // Validate 12-digit parent ID (only numbers)
+            if (!/^\d{12}$/.test(parentIdValue)) {
+                errorDiv.textContent = 'Please enter exactly 12 digits';
+                errorDiv.classList.remove('hidden');
+                parentIdInput.focus();
+                return;
+            }
+            
+            // Check if parent ID exists in authorized database
+            const parent = authorizedPatients[parentIdValue];
+            if (!parent) {
+                errorDiv.textContent = 'Invalid Parent ID. This ID is not registered in our system.';
+                errorDiv.classList.remove('hidden');
+                parentIdInput.focus();
+                return;
+            }
+            
+            // Check if parent account is active
+            if (parent.status !== 'active') {
+                errorDiv.textContent = 'Parent account inactive. Please contact medical administration.';
+                errorDiv.classList.remove('hidden');
+                parentIdInput.focus();
+                return;
+            }
+            
+            errorDiv.classList.add('hidden');
+            
+            // Direct login without OTP
+            currentPatientId = parentIdValue;
+            isMinorAccess = true;
+            showChildrenManagement(parentIdValue, parent);
+        }
+
+        function handleExistingUserLogin() {
+            const idInput = document.getElementById('uniqueId');
+            const idValue = idInput.value.trim();
+            const errorDiv = document.getElementById('idError');
+            
+            // Validate 12-digit ID (only numbers)
+            if (!/^\d{12}$/.test(idValue)) {
+                errorDiv.textContent = 'Please enter exactly 12 digits';
+                errorDiv.classList.remove('hidden');
+                idInput.focus();
+                return;
+            }
+            
+            // Check if ID exists in authorized database
+            const patient = authorizedPatients[idValue];
+            if (!patient) {
+                errorDiv.textContent = 'Invalid Patient ID. This ID is not registered in our system.';
+                errorDiv.classList.remove('hidden');
+                idInput.focus();
+                return;
+            }
+            
+            // Check if patient account is active
+            if (patient.status !== 'active') {
+                errorDiv.textContent = 'Account inactive. Please contact medical administration.';
+                errorDiv.classList.remove('hidden');
+                idInput.focus();
+                return;
+            }
+            
+            errorDiv.classList.add('hidden');
+            
+            // Direct login without OTP
+            currentPatientId = idValue;
+            
+            // Check if patient has previous data
+            if (patientData[idValue] && patientData[idValue].length > 0) {
+                showPreviousData(idValue, patient);
+            } else {
+                // No previous data, go directly to form
+                showInfoForm(idValue, patient, false);
+            }
+        }
+
+
+
+        function showPreviousData(patientId, patient) {
+            document.getElementById('displayPrevId').textContent = patientId;
+            document.getElementById('prevPatientName').textContent = patient.name;
+            
+            const container = document.getElementById('previousDataContainer');
+            container.innerHTML = '';
+            
+            const data = patientData[patientId];
+            data.forEach((entry, index) => {
+                const entryDiv = document.createElement('div');
+                entryDiv.className = 'bg-gradient-to-r from-blue-50 to-green-50 border-2 border-blue-200 rounded-2xl p-6 shadow-lg';
+                entryDiv.innerHTML = `
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-green-500 rounded-full flex items-center justify-center mr-4">
+                                <span class="text-white font-bold">${index + 1}</span>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-800">Medical Record ${index + 1}</h3>
+                                <p class="text-sm text-gray-600">${entry.timestamp}</p>
+                            </div>
+                        </div>
+                        <div class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-semibold">
+                            Active Record
+                        </div>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-6 mb-6">
+                        <div class="bg-white rounded-xl p-4 border border-gray-200">
+                            <p class="text-sm font-semibold text-gray-600 mb-1">Patient Name:</p>
+                            <p class="text-gray-800 font-medium">${entry.name}</p>
+                        </div>
+                        <div class="bg-white rounded-xl p-4 border border-gray-200">
+                            <p class="text-sm font-semibold text-gray-600 mb-1">Age:</p>
+                            <p class="text-gray-800 font-medium">${entry.age} years</p>
+                        </div>
+                        <div class="bg-white rounded-xl p-4 border border-gray-200">
+                            <p class="text-sm font-semibold text-gray-600 mb-1">Gender:</p>
+                            <p class="text-gray-800 font-medium capitalize">${entry.gender}</p>
+                        </div>
+                        <div class="bg-white rounded-xl p-4 border border-gray-200">
+                            <p class="text-sm font-semibold text-gray-600 mb-1">Phone:</p>
+                            <p class="text-gray-800 font-medium">${entry.phoneNumber ? '+91 ' + entry.phoneNumber : 'Not specified'}</p>
+                        </div>
+                        <div class="bg-white rounded-xl p-4 border border-gray-200">
+                            <p class="text-sm font-semibold text-gray-600 mb-1">Emergency Contact:</p>
+                            <p class="text-gray-800 font-medium">${entry.emergencyContact ? '+91 ' + entry.emergencyContact : 'Not specified'}</p>
+                        </div>
+                        <div class="bg-white rounded-xl p-4 border border-gray-200">
+                            <p class="text-sm font-semibold text-gray-600 mb-1">Visit Date & Time:</p>
+                            <p class="text-gray-800 font-medium">${entry.visitDate || 'Not specified'} at ${entry.visitTime || 'Not specified'}</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-xl p-4 border border-gray-200 mb-4">
+                        <p class="text-sm font-semibold text-gray-600 mb-2">Address:</p>
+                        <p class="text-gray-800">${entry.address || 'Not specified'}</p>
+                    </div>
+                    <div class="bg-white rounded-xl p-4 border border-gray-200 mb-4">
+                        <p class="text-sm font-semibold text-gray-600 mb-2">Medical Condition:</p>
+                        <p class="text-gray-800">${entry.disease}</p>
+                    </div>
+                    <div class="bg-white rounded-xl p-4 border border-gray-200 mb-4">
+                        <p class="text-sm font-semibold text-gray-600 mb-2">Treatment Plan:</p>
+                        <p class="text-gray-800">${entry.treatment}</p>
+                    </div>
+                    <div class="bg-white rounded-xl p-4 border border-gray-200 mb-6">
+                        <p class="text-sm font-semibold text-gray-600 mb-3">Medical Documents:</p>
+                        <div class="space-y-2">
+                            ${entry.reports.map(report => `
+                                <div class="flex items-center text-sm bg-blue-50 border border-blue-200 rounded-lg p-3">
+                                    <svg class="w-5 h-5 text-blue-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                    </svg>
+                                    <span class="text-blue-800 font-medium">${report}</span>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                    <button onclick="editEntry(${index})" class="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white px-6 py-3 rounded-xl text-sm font-semibold transition-all duration-200 flex items-center">
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+                        </svg>
+                        Edit This Record
+                    </button>
+                `;
+                container.appendChild(entryDiv);
+            });
+            
+            document.getElementById('idPage').classList.add('hidden');
+            document.getElementById('previousDataPage').classList.remove('hidden');
+        }
+
+        function showInfoForm(patientId, patient, editMode = false, editIndex = -1) {
+            document.getElementById('displayId').textContent = patientId;
+            document.getElementById('patientName').textContent = patient.name;
+            
+            if (editMode) {
+                document.getElementById('formTitle').textContent = 'Edit Medical Record';
+                const data = patientData[patientId][editIndex];
+                document.getElementById('fullName').value = data.name;
+                document.getElementById('age').value = data.age;
+                document.querySelector(`input[name="gender"][value="${data.gender}"]`).checked = true;
+                document.getElementById('phoneNumber').value = data.phoneNumber || '';
+                document.getElementById('emergencyContact').value = data.emergencyContact || '';
+                document.getElementById('address').value = data.address || '';
+                document.getElementById('disease').value = data.disease;
+                document.getElementById('treatment').value = data.treatment;
+                document.getElementById('visitDate').value = data.visitDate || '';
+                document.getElementById('visitTime').value = data.visitTime || '';
+                isEditMode = true;
+                editingIndex = editIndex;
+            } else {
+                document.getElementById('formTitle').textContent = 'Medical Information Form';
+                document.getElementById('infoForm').reset();
+                
+                // Pre-fill data for new users
+                if (newUserData && newUserData.id === patientId) {
+                    document.getElementById('fullName').value = newUserData.name;
+                    document.getElementById('phoneNumber').value = newUserData.phone;
+                }
+                
+                // Set current date and time as default for new entries
+                const now = new Date();
+                const today = now.toISOString().split('T')[0];
+                const currentTime = now.toTimeString().slice(0, 5);
+                document.getElementById('visitDate').value = today;
+                document.getElementById('visitTime').value = currentTime;
+                isEditMode = false;
+                editingIndex = -1;
+            }
+            
+            uploadedFiles = [];
+            document.getElementById('fileList').innerHTML = '';
+            
+            document.getElementById('previousDataPage').classList.add('hidden');
+            document.getElementById('idPage').classList.add('hidden');
+            document.getElementById('newUserSuccessPage').classList.add('hidden');
+            document.getElementById('infoPage').classList.remove('hidden');
+        }
+
+        function editEntry(index) {
+            const patient = authorizedPatients[currentPatientId];
+            showInfoForm(currentPatientId, patient, true, index);
+        }
+
+        function addNewEntry() {
+            const patient = authorizedPatients[currentPatientId];
+            showInfoForm(currentPatientId, patient, false);
+        }
+
+        function editLatestEntry() {
+            const data = patientData[currentPatientId];
+            if (data && data.length > 0) {
+                editEntry(data.length - 1);
+            }
+        }
+
+        function showChildrenManagement(parentId, parent) {
+            document.getElementById('displayParentId').textContent = parentId;
+            document.getElementById('parentPatientName').textContent = parent.name;
+            
+            const container = document.getElementById('childrenContainer');
+            container.innerHTML = '';
+            
+            const children = childrenData[parentId] || [];
+            
+            if (children.length === 0) {
+                container.innerHTML = `
+                    <div class="text-center py-12">
+                        <div class="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <svg class="w-10 h-10 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-600 mb-3">No Children Registered</h3>
+                        <p class="text-gray-500 mb-6">Add your children's information to manage their medical records.</p>
+                        <button onclick="addNewChild()" class="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-200">
+                            Add First Child
+                        </button>
+                    </div>
+                `;
+            } else {
+                children.forEach((child, index) => {
+                    const childDiv = document.createElement('div');
+                    childDiv.className = 'bg-gradient-to-r from-purple-50 to-pink-50 border-2 border-purple-200 rounded-2xl p-6 shadow-lg';
+                    childDiv.innerHTML = `
+                        <div class="flex justify-between items-start mb-6">
+                            <div class="flex items-center">
+                                <div class="w-16 h-16 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full flex items-center justify-center mr-4">
+                                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h3 class="text-2xl font-bold text-gray-800">${child.name}</h3>
+                                    <p class="text-sm text-gray-600">${child.relationship} • Age: ${child.age} years</p>
+                                    <p class="text-xs text-gray-500">Born: ${child.dateOfBirth}</p>
+                                </div>
+                            </div>
+                            <div class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs font-semibold">
+                                Minor Patient
+                            </div>
+                        </div>
+                        
+                        <div class="grid md:grid-cols-3 gap-4 mb-6">
+                            <div class="bg-white rounded-xl p-4 border border-purple-200">
+                                <p class="text-sm font-semibold text-gray-600 mb-1">Child ID:</p>
+                                <p class="text-gray-800 font-mono text-sm">${child.childId}</p>
+                            </div>
+                            <div class="bg-white rounded-xl p-4 border border-purple-200">
+                                <p class="text-sm font-semibold text-gray-600 mb-1">Gender:</p>
+                                <p class="text-gray-800 font-medium capitalize">${child.gender}</p>
+                            </div>
+                            <div class="bg-white rounded-xl p-4 border border-purple-200">
+                                <p class="text-sm font-semibold text-gray-600 mb-1">Medical Records:</p>
+                                <p class="text-gray-800 font-medium">${child.medicalRecords.length} record(s)</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white rounded-xl p-4 border border-purple-200 mb-4">
+                            <p class="text-sm font-semibold text-gray-600 mb-3">Recent Medical Records:</p>
+                            ${child.medicalRecords.slice(-2).map(record => `
+                                <div class="bg-purple-50 border border-purple-200 rounded-lg p-3 mb-2">
+                                    <div class="flex justify-between items-start mb-2">
+                                        <p class="text-sm font-medium text-gray-800">${record.disease}</p>
+                                        <span class="text-xs text-gray-500">${record.visitDate}</span>
+                                    </div>
+                                    <p class="text-xs text-gray-600">${record.treatment}</p>
+                                </div>
+                            `).join('')}
+                        </div>
+                        
+                        <div class="flex gap-3">
+                            <button onclick="viewChildRecords('${child.childId}')" class="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-200 flex items-center">
+                                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                </svg>
+                                View All Records
+                            </button>
+                            <button onclick="addChildMedicalRecord('${child.childId}')" class="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-200 flex items-center">
+                                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                                </svg>
+                                Add Medical Record
+                            </button>
+                            <button onclick="editChildInfo('${child.childId}')" class="bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-200 flex items-center">
+                                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+                                </svg>
+                                Edit Info
+                            </button>
+                        </div>
+                    `;
+                    container.appendChild(childDiv);
+                });
+            }
+            
+            document.getElementById('idPage').classList.add('hidden');
+            document.getElementById('childrenPage').classList.remove('hidden');
+        }
+
+        function addNewChild() {
+            // This would open a form to add new child information
+            alert('Add New Child functionality - This would open a form to register a new child under the parent account.');
+        }
+
+        function viewChildRecords(childId) {
+            currentChildId = childId;
+            const child = findChildById(childId);
+            if (child) {
+                // Show child's medical records in a format similar to adult records
+                showChildMedicalHistory(child);
+            }
+        }
+
+        function addChildMedicalRecord(childId) {
+            currentChildId = childId;
+            const child = findChildById(childId);
+            if (child) {
+                // Open medical form for the child
+                showChildMedicalForm(child, false);
+            }
+        }
+
+        function editChildInfo(childId) {
+            // This would open a form to edit child's basic information
+            alert('Edit Child Info functionality - This would open a form to update the child\'s basic information.');
+        }
+
+        function viewParentRecords() {
+            isMinorAccess = false;
+            currentChildId = null;
+            const patient = authorizedPatients[currentPatientId];
+            if (patientData[currentPatientId] && patientData[currentPatientId].length > 0) {
+                showPreviousData(currentPatientId, patient);
+            } else {
+                showInfoForm(currentPatientId, patient, false);
+            }
+        }
+
+        function findChildById(childId) {
+            const children = childrenData[currentPatientId] || [];
+            return children.find(child => child.childId === childId);
+        }
+
+        function showChildMedicalHistory(child) {
+            // Implementation for showing child's medical history
+            alert(`Viewing medical history for ${child.name} - This would show all medical records for the child.`);
+        }
+
+        function showChildMedicalForm(child, editMode = false) {
+            // Implementation for child medical form
+            alert(`Medical form for ${child.name} - This would open a medical form specifically for the child.`);
+        }
+
+        // Handle information form submission
+        document.getElementById('infoForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Validate phone numbers before submission
+            const phoneNumber = document.getElementById('phoneNumber').value;
+            const emergencyContact = document.getElementById('emergencyContact').value;
+            
+            if (phoneNumber.length !== 10) {
+                document.getElementById('phoneError').classList.remove('hidden');
+                document.getElementById('phoneNumber').focus();
+                return;
+            }
+            
+            if (emergencyContact.length !== 10) {
+                document.getElementById('emergencyError').classList.remove('hidden');
+                document.getElementById('emergencyContact').focus();
+                return;
+            }
+            
+            const formData = new FormData(this);
+            const visitDate = formData.get('visitDate');
+            const visitTime = formData.get('visitTime');
+            const timestamp = `${visitDate} ${visitTime}:00`;
+            
+            const newEntry = {
+                timestamp: timestamp,
+                name: formData.get('fullName'),
+                age: parseInt(formData.get('age')),
+                gender: formData.get('gender'),
+                phoneNumber: formData.get('phoneNumber'),
+                emergencyContact: formData.get('emergencyContact'),
+                address: formData.get('address'),
+                disease: formData.get('disease'),
+                treatment: formData.get('treatment'),
+                visitDate: visitDate,
+                visitTime: visitTime,
+                reports: uploadedFiles.map(file => file.name)
+            };
+            
+            // Initialize patient data if it doesn't exist
+            if (!patientData[currentPatientId]) {
+                patientData[currentPatientId] = [];
+            }
+            
+            if (isEditMode) {
+                // Update existing entry
+                patientData[currentPatientId][editingIndex] = newEntry;
+                
+                // Update personal information across all entries for this patient
+                const personalInfo = {
+                    name: newEntry.name,
+                    age: newEntry.age,
+                    gender: newEntry.gender,
+                    phoneNumber: newEntry.phoneNumber,
+                    emergencyContact: newEntry.emergencyContact,
+                    address: newEntry.address
+                };
+                
+                // Apply personal info updates to all entries
+                patientData[currentPatientId].forEach((entry, index) => {
+                    entry.name = personalInfo.name;
+                    entry.age = personalInfo.age;
+                    entry.gender = personalInfo.gender;
+                    entry.phoneNumber = personalInfo.phoneNumber;
+                    entry.emergencyContact = personalInfo.emergencyContact;
+                    entry.address = personalInfo.address;
+                });
+                
+                // Update the authorized patients database with new name
+                authorizedPatients[currentPatientId].name = personalInfo.name;
+                
+                // Update the display name on current page
+                document.getElementById('patientName').textContent = personalInfo.name;
+            } else {
+                // Add new entry
+                patientData[currentPatientId].push(newEntry);
+            }
+            
+            console.log('Patient Information Updated:', patientData[currentPatientId]);
+            
+            // Show success page
+            document.getElementById('infoPage').classList.add('hidden');
+            document.getElementById('successPage').classList.remove('hidden');
+        });
+
+        // Navigation functions
+        function goBackToId() {
+            document.getElementById('previousDataPage').classList.add('hidden');
+            document.getElementById('idPage').classList.remove('hidden');
+            document.getElementById('uniqueId').focus();
+        }
+
+        function goBackFromForm() {
+            if (patientData[currentPatientId] && patientData[currentPatientId].length > 0) {
+                const patient = authorizedPatients[currentPatientId];
+                showPreviousData(currentPatientId, patient);
+            } else {
+                goBackToId();
+            }
+        }
+
+        function viewPreviousData() {
+            const patient = authorizedPatients[currentPatientId];
+            showPreviousData(currentPatientId, patient);
+            document.getElementById('successPage').classList.add('hidden');
+        }
+
+        function proceedToForm() {
+            const patient = authorizedPatients[currentPatientId];
+            showInfoForm(currentPatientId, patient, false);
+        }
+
+        function toggleUserType() {
+            const userType = document.querySelector('input[name="userType"]:checked').value;
+            const existingSection = document.getElementById('existingUserSection');
+            const newSection = document.getElementById('newUserSection');
+            const minorSection = document.getElementById('minorSection');
+            const submitBtn = document.getElementById('submitBtn');
+            
+            // Update visual selection
+            const options = document.querySelectorAll('.user-type-option');
+            options.forEach(option => {
+                const input = option.querySelector('input[type="radio"]');
+                if (input.checked) {
+                    if (input.value === 'existing') {
+                        option.className = 'flex items-center justify-center p-5 border-2 border-black bg-gray-100 rounded-xl cursor-pointer hover:border-gray-800 hover:bg-gray-200 transition-all duration-200 user-type-option';
+                    } else if (input.value === 'new') {
+                        option.className = 'flex items-center justify-center p-5 border-2 border-green-400 bg-green-100 rounded-xl cursor-pointer hover:border-green-400 hover:bg-green-100 transition-all duration-200 user-type-option';
+                    } else if (input.value === 'minor') {
+                        option.className = 'flex items-center justify-center p-5 border-2 border-purple-400 bg-purple-100 rounded-xl cursor-pointer hover:border-purple-400 hover:bg-purple-100 transition-all duration-200 user-type-option';
+                    }
+                } else {
+                    option.className = 'flex items-center justify-center p-5 border-2 border-gray-400 rounded-xl cursor-pointer hover:border-black hover:bg-gray-100 transition-all duration-200 user-type-option';
+                }
+            });
+            
+            // Hide all sections first
+            existingSection.classList.add('hidden');
+            newSection.classList.add('hidden');
+            minorSection.classList.add('hidden');
+            
+            if (userType === 'new') {
+                newSection.classList.remove('hidden');
+                submitBtn.innerHTML = `
+                    <span class="flex items-center justify-center">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"></path>
+                        </svg>
+                        Create Patient Account
+                    </span>
+                `;
+                submitBtn.className = 'w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-200 transform hover:scale-105 shadow-lg';
+                
+                // Update required attributes
+                document.getElementById('uniqueId').required = false;
+                document.getElementById('parentId').required = false;
+                document.getElementById('newUserName').required = true;
+                document.getElementById('newUserPhone').required = true;
+            } else if (userType === 'minor') {
+                minorSection.classList.remove('hidden');
+                submitBtn.innerHTML = `
+                    <span class="flex items-center justify-center">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                        Access Children Records
+                    </span>
+                `;
+                submitBtn.className = 'w-full bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-200 transform hover:scale-105 shadow-lg';
+                
+                // Update required attributes
+                document.getElementById('uniqueId').required = false;
+                document.getElementById('newUserName').required = false;
+                document.getElementById('newUserPhone').required = false;
+                document.getElementById('parentId').required = true;
+            } else {
+                existingSection.classList.remove('hidden');
+                submitBtn.innerHTML = `
+                    <span class="flex items-center justify-center">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                        </svg>
+                        Access Patient Portal
+                    </span>
+                `;
+                submitBtn.className = 'w-full bg-gradient-to-r from-black to-gray-800 hover:from-gray-800 hover:to-black text-white font-semibold py-4 px-6 rounded-xl transition-all duration-200 transform hover:scale-105 shadow-lg';
+                
+                // Update required attributes
+                document.getElementById('uniqueId').required = true;
+                document.getElementById('parentId').required = false;
+                document.getElementById('newUserName').required = false;
+                document.getElementById('newUserPhone').required = false;
+            }
+        }
+
+        function startOver() {
+            document.getElementById('successPage').classList.add('hidden');
+            document.getElementById('previousDataPage').classList.add('hidden');
+            document.getElementById('infoPage').classList.add('hidden');
+            document.getElementById('newUserSuccessPage').classList.add('hidden');
+            document.getElementById('childrenPage').classList.add('hidden');
+            document.getElementById('idPage').classList.remove('hidden');
+            document.getElementById('idForm').reset();
+            document.getElementById('infoForm').reset();
+            
+            // Reset to existing user by default
+            document.querySelector('input[name="userType"][value="existing"]').checked = true;
+            toggleUserType();
+            
+            document.getElementById('uniqueId').focus();
+            currentPatientId = '';
+            isEditMode = false;
+            editingIndex = -1;
+            newUserData = null;
+            isMinorAccess = false;
+            currentChildId = null;
+        }
+
+        // Auto-format ID input (numbers only)
+        document.getElementById('uniqueId').addEventListener('input', function(e) {
+            this.value = this.value.replace(/\D/g, '');
+        });
+
+        // Phone number validation (numbers only, 10 digits)
+        document.getElementById('phoneNumber').addEventListener('input', function(e) {
+            this.value = this.value.replace(/\D/g, '');
+            const errorDiv = document.getElementById('phoneError');
+            if (this.value.length > 0 && this.value.length !== 10) {
+                errorDiv.classList.remove('hidden');
+            } else {
+                errorDiv.classList.add('hidden');
+            }
+        });
+
+        // Emergency contact validation (numbers only, 10 digits)
+        document.getElementById('emergencyContact').addEventListener('input', function(e) {
+            this.value = this.value.replace(/\D/g, '');
+            const errorDiv = document.getElementById('emergencyError');
+            if (this.value.length > 0 && this.value.length !== 10) {
+                errorDiv.classList.remove('hidden');
+            } else {
+                errorDiv.classList.add('hidden');
+            }
+        });
+
+        // File upload handling
+        function handleFileUpload(input) {
+            const files = Array.from(input.files);
+            const fileList = document.getElementById('fileList');
+            
+            files.forEach(file => {
+                if (file.type === 'application/pdf') {
+                    uploadedFiles.push(file);
+                    
+                    const fileDiv = document.createElement('div');
+                    fileDiv.className = 'flex items-center justify-between bg-green-50 border-2 border-green-200 rounded-xl p-4';
+                    fileDiv.innerHTML = `
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                                <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <span class="text-sm font-medium text-gray-800">${file.name}</span>
+                                <p class="text-xs text-gray-500">${(file.size / 1024 / 1024).toFixed(2)} MB</p>
+                            </div>
+                        </div>
+                        <button type="button" onclick="removeFile('${file.name}', this)" class="text-red-500 hover:text-red-700 p-2 rounded-full hover:bg-red-50 transition-all duration-200">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </button>
+                    `;
+                    fileList.appendChild(fileDiv);
+                } else {
+                    alert('Please select only PDF files for medical reports.');
+                }
+            });
+            
+            input.value = '';
+        }
+
+        function removeFile(fileName, buttonElement) {
+            uploadedFiles = uploadedFiles.filter(file => file.name !== fileName);
+            buttonElement.closest('div').remove();
+        }
+
+        // New user phone validation (numbers only, 10 digits)
+        document.getElementById('newUserPhone').addEventListener('input', function(e) {
+            this.value = this.value.replace(/\D/g, '');
+            const errorDiv = document.getElementById('newUserPhoneError');
+            if (this.value.length > 0 && this.value.length !== 10) {
+                errorDiv.classList.remove('hidden');
+            } else {
+                errorDiv.classList.add('hidden');
+            }
+        });
+
+        // Parent ID validation (numbers only, 12 digits)
+        document.getElementById('parentId').addEventListener('input', function(e) {
+            this.value = this.value.replace(/\D/g, '');
+            const errorDiv = document.getElementById('parentIdError');
+            if (this.value.length > 0 && this.value.length !== 12) {
+                errorDiv.classList.remove('hidden');
+            } else {
+                errorDiv.classList.add('hidden');
+            }
+        });
+
+
+
+        // Focus on ID input when page loads
+        document.getElementById('uniqueId').focus();
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'971968cef7cc5520',t:'MTc1NTYwMzk3Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
